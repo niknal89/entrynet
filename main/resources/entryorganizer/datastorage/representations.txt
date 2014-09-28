@@ -1,0 +1,188 @@
+[
+
+{"name":"book_short", "type":"book", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"}
+]},
+
+{"name":"book_ru_academic", "type":"book", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"},
+{"string":". "}, 
+{"field":"editor", "representation":"short_name", "repeat":"true", "first_prefix":"ред. ", "postfix":", ", "last_postfix":" "},
+{"field":"volume_number", "prefix":"в ", "postfix":" т. "}, 
+{"field":"edition", "representation":"edition_ru"},
+{"string":" ", "condition":"next"},
+{"field":"series", "prefix":"("}, 
+{"string":" ", "condition":"next"},
+{"field":"series_number", "postfix":")"}
+]},
+
+{"name":"short_name", "type":"person", "field_order":
+[
+{"field":"last_name"},
+{"string":" "},
+{"field":"first_name", "length": 1},
+{"string":"."}, 
+{"field":"other_name", "length": 1, "repeat":"true", "first_prefix":" ", "postfix":". ", "last_postfix":"."}
+]},
+
+{"name":"full_name", "type":"person", "field_order":
+[
+{"field":"last_name"},
+{"string":" "},
+{"field":"first_name"},
+{"string":" "}, 
+{"field":"other_name", "repeat":"true", "postfix":" ", "last_postfix":""}
+]},
+
+{"name":"edition_ru", "type":"edition", "field_order":
+[
+{"field":"edition", "postfix":"-е изд. "},
+{"field":"place", "representation":"place", "repeat":"true", "postfix":", ", "last_postfix":""},
+{"string":": ", "condition":"both"},
+{"field":"publisher", "representation":"publisher", "repeat":"true", "postfix":", ", "last_postfix":""},
+{"field":"year", "prefix":", ", "postfix":"."}
+]},
+
+{"name":"place", "type":"place", "field_order":
+[
+{"field":"name"}
+]},
+
+{"name":"publisher", "type":"publisher", "field_order":
+[
+{"field":"title"}
+]},
+
+{"name":"series", "type":"series", "field_order":
+[
+{"field":"title"}
+]},
+
+{"name":"volume_ru_academic", "type":"volume", "field_order":
+[
+{"field":"book", "representation":"book_ru_academic", "postfix":". "},
+{"field":"volume", "prefix":"Т. "},
+{"string":". ", "condition":"previous"},
+{"field":"volume_name"}, 
+{"string":". ", "condition":"previous"}, 
+{"field":"place", "representation":"place"}, 
+{"string":", ", "condition":"both"},
+{"field":"year"}
+]},
+
+{"name":"volume_short", "type":"volume", "field_order":
+[
+{"field":"book", "representation":"book_short", "postfix":". "},
+{"field":"volume", "prefix":"Т. "},
+{"string":". ", "condition":"previous"},
+{"field":"volume_name"}, 
+{"string":". ", "condition":"previous"}, 
+{"field":"place", "representation":"place"}, 
+{"string":", ", "condition":"both"},
+{"field":"year"}
+]},
+
+{"name":"j_article_ru_academic", "type":"journal_article", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"},
+{"string":" // "}, 
+{"field":"journal", "representation":"journal"}, 
+{"string":". - ", "condition":"not_last"},
+{"field":"year"},
+{"string":". - ", "condition":"not_last"},
+{"field":"issue"}, 
+{"string":". - ", "condition":"not_last"},
+{"field":"page_start", "prefix":"с. "},
+{"field":"page_end", "prefix":"-"}
+]},
+
+{"name":"journal", "type":"journal", "field_order":
+[
+{"field":"title"}
+]},
+
+{"name":"b_article_ru_academic", "type":"book_article", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"},
+{"string":" // "}, 
+{"field":"book", "representation":"book_ru_academic"}, 
+{"string":". ", "condition":"not_last"}, 
+{"field":"volume", "prefix":"Т. "},
+{"string":". ", "condition":"previous"}, 
+{"field":"volume_name"}, 
+{"string":". ", "condition":"previous"}, 
+{"field":"page_start", "prefix":"с. "},
+{"field":"page_end", "prefix":"-"}
+]},
+
+{"name":"n_article_ru_academic", "type":"newspaper_article", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"},
+{"string":" // "}, 
+{"field":"newspaper", "representation":"newspaper"}, 
+{"string":". - ", "condition":"not_last"},
+{"field":"year"},
+{"string":". - ", "condition":"not_last"},
+{"field":"date"}, 
+{"string":". - ", "condition":"not_last"},
+{"field":"page_start", "prefix":"с. "},
+{"field":"page_end", "prefix":"-"}
+]},
+
+{"name":"newspaper", "type":"newspaper", "field_order":
+[
+{"field":"title"}
+]},
+
+{"name":"archive_item", "type":"item", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title", "prefix":"Д. "},
+{"field":"file", "representation":"file", "postfix":". "}
+]},
+
+{"name":"file", "type":"file", "field_order":
+[
+{"field":"fund", "representation":"fund", "postfix":". "},
+{"field":"number", "prefix":"Оп. "} 
+]},
+
+{"name":"fund", "type":"fund", "field_order":
+[
+{"field":"archive", "representation":"archive", "postfix":". "}, 
+{"field":"title", "prefix":"Ф. "}
+]},
+
+{"name":"archive", "type":"archive", "field_order":
+[
+{"field":"title"}
+]}, 
+
+{"name":"internet_article", "type":"internet_article", "field_order":
+[
+{"field":"author", "representation":"short_name", "repeat":"true", "postfix":", ", "last_postfix":" "},
+{"field":"title"},
+{"string":", "},
+{"field":"URL"}
+]}, 
+
+{"name":"chapter", "type":"chapter", "field_order":
+[
+{"field":"title"}
+]},
+
+{"name":"library_code", "type":"library_code", "field_order":
+[
+{"field":"library"},
+{"string":" "},
+{"field":"code"}
+]}
+
+]

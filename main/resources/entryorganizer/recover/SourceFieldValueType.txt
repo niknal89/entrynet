@@ -1,0 +1,5 @@
+[
+{"name":"number", "regex":"[0-9]+"},
+{"name":"pageNumber","regex":"[0-9-]+"},
+{"name":"whatever","regex":".*"}
+]

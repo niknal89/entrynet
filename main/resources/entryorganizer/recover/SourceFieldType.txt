@@ -1,0 +1,99 @@
+﻿[
+{"name":"author", "ruName":"Фамилия автора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"true"},
+
+{"name":"authorName", "ruName":"Имя автора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"authorPatronymic", "ruName":"Отчество автора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"editor", "ruName":"Фамилия редактора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"true"},
+
+{"name":"editorName", "ruName":"Имя редактора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"editorPatronymic", "ruName":"Отчество редактора", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"title", "ruName":"Заголовок", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false", 
+"dependentTypes":[
+{"typeName":"volumes"},{"typeName":"volume_number"},{"typeName":"edition"},{"typeName":"place"},
+{"typeName":"year"},{"typeName":"series"},{"typeName":"series_number"},{"typeName":"libraryCode"}
+]},
+
+{"name":"volumes", "ruName":"Количество томов", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"volume_number", "ruName":"Номер тома", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"volume_title", "ruName":"Название тома", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"edition", "ruName":"Издание", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"place", "ruName":"Место издания", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"true"},
+
+{"name":"publisher", "ruName":"Издатель", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"true"},
+
+{"name":"year", "ruName":"Год", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"URL", "ruName":"URL", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"series", "ruName":"Серия", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true"},
+
+{"name":"series_number", "ruName":"Номер", "valueType":"number", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"book_title", "ruName":"Заголовок книги", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true", "parentSourceType":"book", 
+"parentFieldType":"title"},
+
+{"name":"volume", "ruName":"Том", "valueType":"number", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"issue", "ruName":"Номер", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"pages", "ruName":"Страницы", "valueType":"pageNumber", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"journal_title", "ruName":"Название журнала", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true", "parentSourceType":"journal"},
+
+{"name":"newspaper_title", "ruName":"Название газеты", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"date", "ruName":"Дата", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"},
+
+{"name":"libraryCode", "ruName":"Библиотечный код", "valueType":"whatever", 
+"severalPossible":"true", "prefix":",", "objectPossible":"false"},
+
+{"name":"archive", "ruName":"Архив", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true"},
+
+{"name":"fund", "ruName":"Фонд", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true", 
+"dependentTypes":[
+{"typeName":"archive"}
+]},
+
+{"name":"file", "ruName":"Опись", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"true", 
+"dependentTypes":[
+{"typeName":archive"}, {"typeName":"fund"}
+]},
+
+{"name":"item", "ruName":"Дело", "valueType":"whatever", 
+"severalPossible":"false", "prefix":",", "objectPossible":"false"}
+]

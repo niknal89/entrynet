@@ -1,0 +1,12 @@
+entry.png 16 16 16 16
+search.png 16 16 16 16
+source.png 16 16 16 16
+tag.png 16 16 16 16
+author.png 16 16 16 16
+delete.png 16 16 16 16
+unlink.png 16 16 16 16
+remove.png 16 16 16 16
+wrapper.png 16 16 16 16
+unfold.png 16 16 16 16
+fold.png 16 16 16 16
+add.png 16 16 16 16

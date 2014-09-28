@@ -1,0 +1,45 @@
+[
+{"name":"default", "representations":[
+{"type":"book", "representation":"book_ru_academic"},
+{"type":"volume", "representation":"volume_ru_academic"},
+{"type":"person", "representation":"full_name"},
+{"type":"edition", "representation":"edition_ru"},
+{"type":"publisher", "representation":"publisher"},
+{"type":"place", "representation":"place"},
+{"type":"series", "representation":"series"},
+{"type":"journal_article", "representation":"j_article_ru_academic"},
+{"type":"journal", "representation":"journal"},
+{"type":"book_article", "representation":"b_article_ru_academic"},
+{"type":"newspaper_article", "representation":"n_article_ru_academic"},
+{"type":"newspaper", "representation":"newspaper"},
+{"type":"item", "representation":"archive_item"},
+{"type":"file", "representation":"file"},
+{"type":"fund", "representation":"fund"},
+{"type":"archive", "representation":"archive"},
+{"type":"internet_article", "representation":"internet_article"},
+{"type":"chapter", "representation":"chapter"},
+{"type":"library_code", "representation":"library_code"}
+]},
+
+{"name":"short", "representations":[
+{"type":"book", "representation":"book_short"},
+{"type":"volume", "representation":"volume_short"},
+{"type":"person", "representation":"short_name"},
+{"type":"edition", "representation":"edition_ru"},
+{"type":"publisher", "representation":"publisher"},
+{"type":"place", "representation":"place"},
+{"type":"series", "representation":"series"},
+{"type":"journal_article", "representation":"j_article_ru_academic"},
+{"type":"journal", "representation":"journal"},
+{"type":"book_article", "representation":"b_article_ru_academic"},
+{"type":"newspaper_article", "representation":"n_article_ru_academic"},
+{"type":"newspaper", "representation":"newspaper"},
+{"type":"item", "representation":"archive_item"},
+{"type":"file", "representation":"file"},
+{"type":"fund", "representation":"fund"},
+{"type":"archive", "representation":"archive"},
+{"type":"internet_article", "representation":"internet_article"},
+{"type":"chapter", "representation":"chapter"},
+{"type":"library_code", "representation":"library_code"}
+]}
+]

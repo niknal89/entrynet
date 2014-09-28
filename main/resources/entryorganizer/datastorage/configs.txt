@@ -1,0 +1,4 @@
+﻿{"dataTypesPath":"dataTypes.txt", 
+"entityTypesPath":"entityTypes.txt",
+"representationsPath":"representations.txt",
+"representationSetsPath":"representation_sets.txt"}

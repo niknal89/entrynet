@@ -1,0 +1,52 @@
+[
+{"name":"book", 
+"ruName":"Книга", 
+"fields":[
+{"fieldName":"author"},{"fieldName":"authorName"},{"fieldName":"authorPatronymic"},{"fieldName":"editor"},{"fieldName":"editorName"},
+{"fieldName":"editorPatronymic"},{"fieldName":"title", "mainField":"true"},{"fieldName":"volumes"},{"fieldName":"volume_number"},{"fieldName":"volume_title"},
+{"fieldName":"edition"},{"fieldName":"place"},{"fieldName":"publisher"},{"fieldName":"year"},{"fieldName":"URL"},{"fieldName":"libraryCode"},
+{"fieldName":"series"},{"fieldName":"series_number"}
+]},
+
+{"name":"bookPart", 
+"ruName":"Раздел в книге", 
+"fields":[
+{"fieldName":"author"},{"fieldName":"authorName"},{"fieldName":"authorPatronymic"},{"fieldName":"title"},{"fieldName":"book_title"},
+{"fieldName":"pages"},{"fieldName":"editor"},{"fieldName":"editorName"},{"fieldName":"editorPatronymic"},
+{"fieldName":"volumes"},{"fieldName":"volume_number"},{"fieldName":"volume_title"},
+{"fieldName":"edition"},{"fieldName":"place"},{"fieldName":"publisher"},{"fieldName":"year"},{"fieldName":"URL"},{"fieldName":"libraryCode"},
+{"fieldName":"series"},{"fieldName":"series_number"}
+]},
+
+{"name":"journalArticle", 
+"ruName":"Статья", 
+"fields":[
+{"fieldName":"author"},{"fieldName":"authorName"},{"fieldName":"authorPatronymic"},{"fieldName":"title"},{"fieldName":"journal_title"},
+{"fieldName":"volume"},{"fieldName":"issue"},{"fieldName":"year"},{"fieldName":"pages"},{"fieldName":"libraryCode"}
+]},
+
+{"name":"newspaperArticle", 
+"ruName":"Газетная статья", 
+"fields":[
+{"fieldName":"author"},{"fieldName":"authorName"},{"fieldName":"authorPatronymic"},{"fieldName":"title"},{"fieldName":"newspaper_title"},
+{"fieldName":"issue"},{"fieldName":"date"},{"fieldName":"year"},{"fieldName":"pages"},{"fieldName":"libraryCode"}
+]},
+
+{"name":journal",
+"ruName":"Журнал",
+"fields":[
+{"fieldName":"journal_title", "mainField":"true"},{"fieldName":"libraryCode"}
+]},
+
+{"name":"archive_paper", 
+"ruName":"Архивное дело", 
+"fields":[
+{"fieldName":"title"},{"fieldName":"archive"},{"fieldName":"fund"},{"fieldName":"file"},{"fieldName":"item"}
+]},
+
+{"name":"internetArticle", 
+"ruName":"Статья в интернете", 
+"fields":[
+{"fieldName":"author"},{"fieldName":"authorName"},{"fieldName":"authorPatronymic"},{"fieldName":"title"},{"fieldName":"URL"}
+]}
+]

@@ -1,0 +1,197 @@
+﻿[
+
+{"name":"any"},
+
+{"name":"entity", "parent":"any", 
+"allowedFields":[
+{"field":"tag", "limit": -1, "type":"tag", "return_field":"link"},
+{"field":"description", "limit": -1, "type":"entry", "return_field":"subject"}
+]},
+
+{"name":"tag", "parent":"any", 
+"allowedFields":[
+{"field":"name", "limit": 1, "type":"str"},
+{"field":"tag", "limit": -1, "type":"tag", "return_field":"tag"},
+{"field":"source", "limit": -1, "type":"source", "return_field":"tag"},
+{"field":"entry", "limit": -1, "type":"entry", "return_field":"tag"},
+{"field":"link", "limit": -1, "type":"entity", "return_field":"tag"}
+]},
+ 
+{"name":"entry", "parent":"any",
+"allowedFields":[
+{"field":"content", "limit": 1, "type":"str"},
+{"field":"page_start", "limit": 1, "type":"int"},
+{"field":"page_end", "limit": 1, "type":"int"},
+{"field":"source", "limit": 1, "type":"source", "return_field":"extract"},
+{"field":"chapter", "limit": 1, "type":"chapter", "return_field":"extract"},
+{"field":"subject", "limit": -1, "type":"entity", "return_field":"description"},
+{"field":"tag", "limit": -1, "type":"tag", "return_field":"entry"}
+]},
+ 
+{"name":"source", "parent":"any",
+"allowedFields":[
+{"field":"extract", "limit": -1, "type":"entry", "return_field":"source"},
+{"field":"tag", "limit": -1, "type":"tag", "return_field":"source"},
+{"field":"author", "limit": -1, "type":"person", "return_field":"source_written"},
+{"field":"translator", "limit": -1, "type":"person"},
+{"field":"person", "limit": -1, "type":"person", "return_field":"source"},
+{"field":"title", "limit": 1, "type":"str"}, 
+{"field":"description", "limit": -1, "type":"entry", "return_field":"subject"},
+{"field":"review", "limit": -1, "type":"source"}, 
+{"field":"chapter", "limit": -1, "type":"chapter", "return_field":"parent_source"}
+]},
+
+{"name":"person", "parent":"entity",
+"allowedFields":[
+{"field":"first_name", "limit": 1, "type":"str"},
+{"field":"last_name", "limit": 1, "type":"str"},
+{"field":"other_name", "limit": -1, "type":"str"},
+{"field":"source_written", "limit": -1, "type":"source", "return_field":"author"},
+{"field":"source_edited", "limit": -1, "type":"source", "return_field":"editor"},
+{"field":"source", "limit": -1, "type":"source", "return_field":"person"}
+]},
+
+{"name":"book", "parent":"source", 
+"allowedFields":[
+{"field":"editor", "limit": -1, "type":"person", "return_field":"source_edited"},
+{"field":"article", "limit": -1, "type":"book_article", "return_field":"book"},
+{"field":"volume_number", "limit": 1, "type":"int"},
+{"field":"volume", "limit": -1, "type":"volume", "return_field":"book"},
+{"field":"edition", "limit": -1, "type":"edition"},
+{"field":"library_code", "limit": -1, "type":"library_code"},
+{"field":"series", "limit": 1, "type":"series", "return_field":"book"},
+{"field":"series_number", "limit": 1, "type":"int"}
+]},
+
+{"name":"edition", "parent":"any", "allow_search":"false",
+"allowedFields":[
+{"field":"book", "limit": 1, "type":"book", "return_field":"edition"},
+{"field":"edition", "limit": 1, "type":"int"},
+{"field":"place", "limit": -1, "type":"place", "return_field":"book"},
+{"field":"publisher", "limit": -1, "type":"publisher", "return_field":"book"},
+{"field":"year", "limit": 1, "type":"int"}
+]},
+
+{"name":"place", "parent":"entity",
+"allowedFields":[
+{"field":"book", "limit": 1, "type":"edition", "return_field":"place"},
+{"field":"name", "limit": 1, "type":"str"}
+]},
+
+{"name":"publisher", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"book", "limit": -1, "type":"edition", "return_field":"publisher"}
+]},
+
+{"name":"series", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"book", "limit": -1, "type":"book", "return_field":"series"}
+]},
+
+{"name":"library_code", "parent":"any", "allow_search":"false",
+"allowedFields":[
+{"field":"library", "limit": 1, "type":"str"},
+{"field":"code", "limit": 1, "type":"str"}
+]},
+
+{"name":"volume", "parent":"source",
+"allowedFields":[
+{"field":"volume", "limit": 1, "type":"int"},
+{"field":"volume_name", "limit": 1, "type":"str"},
+{"field":"book", "limit": 1, "type":"book", "return_field":"volume"},
+{"field":"place", "limit": 1, "type":"place"},
+{"field":"year", "limit": 1, "type":"int"}
+]},
+
+{"name":"article", "parent":"source", 
+"allowedFields":[
+{"field":"page_start", "limit": 1, "type":"int"},
+{"field":"page_end", "limit": 1, "type":"int"}
+]},
+
+{"name":"journal_article", "parent":"article",
+"allowedFields":[
+{"field":"journal", "limit": 1, "type":"journal", "return_field":"article"},
+{"field":"year", "limit": 1, "type":"int"},
+{"field":"volume", "limit": 1, "type":"int"},
+{"field":"issue", "limit": 1, "type":"int"}
+]},
+
+{"name":"journal", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"article", "limit": -1, "type":"journal_article", "return_field":"journal"},
+{"field":"library_code", "limit": 1, "type":"library_code"}
+]},
+
+{"name":"book_article", "parent":"article", 
+"allowedFields":[
+{"field":"book", "limit": 1, "type":"book", "return_field":"article"},
+{"field":"volume", "limit": 1, "type":"int"},
+{"field":"volume_name", "limit": 1, "type":"str"}
+]},
+
+{"name":"newspaper_article", "parent":"article",
+"allowedFields":[
+{"field":"newspaper", "limit": 1, "type":"newspaper", "return_field":"article"},
+{"field":"year", "limit": 1, "type":"int"},
+{"field":"date", "limit": 1, "type":"str"},
+{"field":"issue", "limit": 1, "type":"int"}
+]},
+
+{"name":"newspaper", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"article", "limit": -1, "type":"newspaper_article", "return_field":"newspaper"},
+{"field":"library_code", "limit": 1, "type":"int"}
+]},
+
+{"name":"item", "parent":"source",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"file", "limit": 1, "type":"file", "return_field":"item"}
+]},
+
+{"name":"archive", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"fund", "limit": -1, "type":"fund", "return_field":"archive"}
+]},
+
+{"name":"fund", "parent":"entity",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"archive", "limit": 1, "type":"archive", "return_field":"fund"},
+{"field":"file", "limit": -1, "type":"file", "return_field":"fund"}
+]},
+
+{"name":"file", "parent":"entity",
+"allowedFields":[
+{"field":"fund", "limit": 1, "type":"fund", "return_field":"file"},
+{"field":"number", "limit": 1, "type":"int"},
+{"field":"item", "limit": -1, "type":"item", "return_field":"file"}
+]},
+
+{"name":"internet_article", "parent":"source",
+"allowedFields":[
+{"field":"URL", "limit": 1, "type":"str"},
+{"field":"site", "limit": 1, "type":"site"}
+]},
+
+{"name":"site", "parent":"entity",
+"allowedFields":[
+{"field":"URL", "limit": 1, "type":"str"}
+]},
+
+{"name":"chapter", "parent":"entity", "allow_search":"false",
+"allowedFields":[
+{"field":"title", "limit": 1, "type":"str"},
+{"field":"parent_source", "limit": 1, "type":"source", "return_field":"chapter"},
+{"field":"sub_chapter", "limit": -1, "type":"chapter", "return_field":"parent_chapter"},
+{"field":"parent_chapter", "limit": 1, "type":"chapter", "return_field":"sub_chapter"},
+{"field":"extract", "limit": -1, "type":"entry", "return_field":"chapter"}
+]}
+
+]
