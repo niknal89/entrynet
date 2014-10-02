@@ -191,13 +191,12 @@ public class ContentPanel extends javax.swing.JPanel {
 
         @Override
         public void forgeCompleted(Wrapper w) {
-            reload();
-            requestFocus();
+            forgeFinished();
         }
 
     };
     
-    public void forgeCompleted() {
+    public void forgeFinished() {
         scrollContent.setViewportView(currentViewport);
         currentViewport.validate();
         scrollContent.validate();
@@ -309,7 +308,7 @@ public class ContentPanel extends javax.swing.JPanel {
     private class FP implements ForgeParent {
 
         public void cancelForge() {
-            reload();
+            forgeFinished();
         }
 
         public RepresentationSet getViewOrder() {

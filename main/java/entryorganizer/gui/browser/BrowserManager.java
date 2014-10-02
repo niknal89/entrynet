@@ -89,7 +89,7 @@ public class BrowserManager {
     }
     
     public void forgeCompleted() {
-        this.getBrowser().getContentPanel().forgeCompleted();
+        this.getBrowser().getContentPanel().forgeFinished();
     }
     
     public void openNewBrowser(Wrapper w) {

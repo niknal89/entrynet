@@ -112,7 +112,7 @@ public class KeyManager {
         browser.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).
                 put(KeyManager.NEXT_BROWSER, "next_browser");
         browser.getActionMap().put("next_browser", new NextBrowser());
-        
+        savedMap = browser.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }  
     
     public void block(boolean block) {
